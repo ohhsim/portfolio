@@ -24,7 +24,18 @@
     <div class="contact-item email-item">
         📧 <span>simran2605.vs@gmail.com</span>
     </div>
-    <div class="contact-item query-item">
+    <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+</form>
+
+<p id="form-status"></p>
+
         💬 <span>
             For any queries, collaboration, or opportunities, feel free to contact
             me via email. I will get back as soon as possible.
@@ -32,5 +43,27 @@
     </div>
 </div>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("wNzM6V4iaJRygeEdl");
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_iuz8j3i",
+      "template_4mwn9gv",
+      this
+    ).then(function() {
+        document.getElementById("form-status").innerText = "✅ Message sent successfully!";
+    }, function(error) {
+        document.getElementById("form-status").innerText = "❌ Failed to send message.";
+    });
+  });
+</script>
+
 </body>
 </html>

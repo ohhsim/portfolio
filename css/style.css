@@ -67,12 +67,13 @@ body.dark {
     text-decoration: none;
 }
 .card {
-    background: rgba(255,255,255,0.95);
-    padding: 45px 55px;
-    border-radius: 22px;
-    max-width: 750px;
-    margin: 120px auto;
+  max-width: 1200px;        /* 🔥 LIMIT WIDTH */
+  margin: 60px auto;       /* 🔥 CENTER HORIZONTALLY */
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 30px;
 }
+
 .skills {
     display: flex;
     gap: 15px;
@@ -109,21 +110,24 @@ body.dark .card p {
     line-height: 1.6;
 }
 .projects-heading {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;   /* 🔥 SPACE BELOW HEADING */
 }
+
 .projects-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  display: flex;
+  justify-content: center;   /* 🔥 CENTER CARDS */
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
 }
+
 .project-box {
-    background: #ffffff;
-    padding: 25px 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 340px;          /* 🔥 balanced width */
+  margin: 0 auto;        /* 🔥 extra safety centering */
 }
+
 .project-title {
     margin-bottom: 12px;
     font-size: 20px;
@@ -297,4 +301,90 @@ body.dark .card h3 {
 .resume-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;   /* 🔥 THIS FIXES ALIGNMENT */
+}
+
+
+.project-box {
+  background: #fff;
+  width: 320px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+
+  display: flex;          /* 🔥 */
+  flex-direction: column; /* 🔥 */
+}
+
+
+.project-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.25);
+}
+
+.project-box img {
+  width: 100%;
+  height: 180px;          /* 🔥 SAME HEIGHT */
+  object-fit: cover;     /* 🔥 IMAGE CROP PROPERLY */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-box ul {
+  flex-grow: 1;   /* 🔥 equal spacing */
+}
+
+.tech-stack {
+  margin: 15px 0;
+}
+
+.badge {
+  display: inline-block;
+  background: #f1f1f1;
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#contact-form button {
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: #6a0dad;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#contact-form button:hover {
+  background: #5800a8;
+}
+
+#form-status {
+  text-align: center;
+  margin-top: 10px;
 }
